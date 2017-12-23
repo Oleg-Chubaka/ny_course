@@ -6,7 +6,7 @@
   %link(rel="icon" href="/images/logo.png" type="images/png")
   %meta(name="viewport" content="width=device-width, initial-scale=1")
 %body
-  %h3 Студент
+  %h3 Студенты
   %ul
     - @students.each do |student|
       %li= student.first_name + ' ' + student.last_name + ' - ' + student.project_name
