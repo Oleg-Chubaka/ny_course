@@ -5798,7 +5798,7 @@ button.close {
   .hidden-print {
     display: none !important; } }
 body {
-  background: red; }
+  background: green; }
 
 /*@font-face {
   font-family: Plainot;
