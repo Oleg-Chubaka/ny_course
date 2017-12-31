@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171217150636) do
+ActiveRecord::Schema.define(version: 20171230083010) do
+
+  create_table "authors", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "tesera_url"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+  end
+
+  create_table "categories_oleg_games", force: :cascade do |t|
+    t.integer "oleg_game_id", null: false
+    t.integer "category_id", null: false
+    t.index ["category_id"], name: "index_categories_oleg_games_on_category_id"
+    t.index ["oleg_game_id"], name: "index_categories_oleg_games_on_oleg_game_id"
+  end
+
+  create_table "game_images", force: :cascade do |t|
+    t.string "img_url"
+    t.integer "oleg_game_id", null: false
+    t.index ["oleg_game_id"], name: "index_game_images_on_oleg_game_id"
+  end
+
+  create_table "oleg_games", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "review", null: false
+    t.integer "price", default: 150, null: false
+    t.integer "hours", default: 1, null: false
+    t.float "rating", null: false
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "status", default: false, null: false
+    t.string "tesera_url"
+    t.index ["author_id"], name: "index_oleg_games_on_author_id"
+  end
 
   create_table "students", force: :cascade do |t|
     t.string "first_name", null: false
+    t.string "last_name", null: false
     t.string "project_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
