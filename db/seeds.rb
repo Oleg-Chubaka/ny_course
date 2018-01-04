@@ -22,3 +22,9 @@ oleg_games[3].categories << categories[1] << categories[2]
 
 GameImage.create([{img_url: 'https://tesera.ru/images/items/509,3/200x200xpa/photo1.jpg', oleg_game: oleg_games[0]}, {img_url: 'https://tesera.ru/images/items/509,3/200x200xpa/photo2.jpg', oleg_game: oleg_games[0]}, {img_url: 'https://tesera.ru/images/items/472,3/200x200xpa/photo1.png', oleg_game: oleg_games[1]}, {img_url: 'https://tesera.ru/images/items/472,3/200x200xpa/photo2.jpg', oleg_game: oleg_games[1]}, {img_url: 'https://tesera.ru/images/items/472,3/200x200xpa/photo1.png', oleg_game: oleg_games[2]}, {img_url: 'https://tesera.ru/images/items/22648,3/200x200xpa/photo1.jpg', oleg_game: oleg_games[3]}])
 
+Pioneer.delete_all
+SolarSystemObject.delete_all
+
+pioneers = Pioneer.create([{first_name: 'Галилео', last_name: 'Галилей'}])
+solar_system_objects = SolarSystemObject.create([{name: 'Меркурий', pioneer: pioneers[0], opening_date: 'Начало ХVII века', distance_from_sun: 'В среднем 57,91 млн км', distance_from_earth: 'В среднем 149,5 млн км', weight: '3,285E20 т',notes: 'Планета земной группы. Безжизнен. Есть атмосфера. Спутников нет.'}])
+

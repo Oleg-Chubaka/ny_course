@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171230083010) do
+ActiveRecord::Schema.define(version: 20180104115653) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first_name", null: false
@@ -47,6 +47,22 @@ ActiveRecord::Schema.define(version: 20171230083010) do
     t.boolean "status", default: false, null: false
     t.string "tesera_url"
     t.index ["author_id"], name: "index_oleg_games_on_author_id"
+  end
+
+  create_table "pioneers", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+  end
+
+  create_table "solar_system_objects", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "opening_date", null: false
+    t.string "distance_from_sun", null: false
+    t.string "distance_from_earth", null: false
+    t.string "weight", null: false
+    t.text "notes", null: false
+    t.integer "pioneer_id", null: false
+    t.index ["pioneer_id"], name: "index_solar_system_objects_on_pioneer_id"
   end
 
   create_table "students", force: :cascade do |t|

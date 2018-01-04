@@ -5,6 +5,8 @@ require './models/oleg_game'
 require './models/author'
 require './models/category'
 require './models/game_image'
+require './models/pioneer'
+require './models/solar_system_object'
 
 set :database, "sqlite3:ny.sqlite3"
 
