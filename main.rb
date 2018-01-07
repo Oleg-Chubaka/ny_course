@@ -16,3 +16,16 @@ get '/' do
   @students = Student.all
   haml :'students/index'
 end
+
+get /\/(\d+)/ do |id|
+  id = id.to_i
+  @student = Student.find_by_id(id)
+  if id == 4 # Oleg B.
+    @o_gs = OlegGame.includes(:author, :categories, :game_images).all
+    # @auts = Author.all
+    # @cgs = Category.all
+    # @g_is = GameImage.all
+    haml :'oleg/games'
+  end
+
+end
