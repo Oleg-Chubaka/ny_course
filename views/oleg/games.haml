@@ -13,5 +13,5 @@
       - game.categories.each do |cat|
         %span= cat.name
       - game.game_images.each do |imge|
-        %img(src="#{imge.img_url}")
-
+        - if imge.main
+          %img(src="#{imge.img_url}")

@@ -9,4 +9,5 @@
   %h3 Студенты
   %ul
     - @students.each do |student|
-      %li= student.first_name + ' ' + student.last_name + ' - ' + student.project_name
+      %li
+        %a(href="/#{student.id}")= student.first_name + ' ' + student.last_name + ' - ' + student.project_name

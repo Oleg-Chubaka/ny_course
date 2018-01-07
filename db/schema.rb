@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105094236) do
+ActiveRecord::Schema.define(version: 20180107141644) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first_name", null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180105094236) do
   create_table "game_images", force: :cascade do |t|
     t.string "img_url"
     t.integer "oleg_game_id", null: false
+    t.boolean "main", default: false, null: false
     t.index ["oleg_game_id"], name: "index_game_images_on_oleg_game_id"
   end
 
