@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104115653) do
+ActiveRecord::Schema.define(version: 20180105094236) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "tesera_url"
+  end
+
+  create_table "best_players", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.integer "team_id", null: false
+    t.index ["team_id"], name: "index_best_players_on_team_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -71,6 +78,15 @@ ActiveRecord::Schema.define(version: 20180104115653) do
     t.string "project_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "country", null: false
+    t.string "foundation_date", null: false
+    t.string "trener", null: false
+    t.string "rating", null: false
+    t.text "notes", null: false
   end
 
 end

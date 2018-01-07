@@ -7,6 +7,8 @@ require './models/category'
 require './models/game_image'
 require './models/pioneer'
 require './models/solar_system_object'
+require './models/team'
+require './models/best_player'
 
 set :database, "sqlite3:ny.sqlite3"
 

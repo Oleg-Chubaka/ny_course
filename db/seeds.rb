@@ -28,3 +28,10 @@ SolarSystemObject.delete_all
 pioneers = Pioneer.create([{first_name: 'Галилео', last_name: 'Галилей'}])
 solar_system_objects = SolarSystemObject.create([{name: 'Меркурий', pioneer: pioneers[0], opening_date: 'Начало ХVII века', distance_from_sun: 'В среднем 57,91 млн км', distance_from_earth: 'В среднем 149,5 млн км', weight: '3,285E20 т',notes: 'Планета земной группы. Безжизнен. Есть атмосфера. Спутников нет.'}])
 
+Team.delete_all
+BestPlayer.delete_all
+
+teams = Team.create([{name: 'Барселона', country: 'Испания', foundation_date: '29 ноября 1899 г.', trener: 'Эрнесто Вальверде
+', rating: '5 звёзд', notes: '24 — титула чемпиона Испании, 29 — Кубков Испании, 12 — Суперкубков Испании, 2 — Кубка испанской лиги.'}])
+
+best_players = BestPlayer.create([{first_name: 'Лионель', last_name: 'Месси', team: teams[0]}, {first_name: 'Луис', last_name: 'Суарес', team: teams[0]}, {first_name: 'Жерар', last_name: 'Пике', team: teams[0]}, {first_name: 'Неймар да Силва', last_name: 'Сантос Жуниор', team: teams[0]}])
