@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180111114828) do
+ActiveRecord::Schema.define(version: 20180112123651) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first_name", null: false
@@ -66,6 +66,12 @@ ActiveRecord::Schema.define(version: 20180111114828) do
   create_table "pioneers", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
+  end
+
+  create_table "solar_system_object_images", force: :cascade do |t|
+    t.string "img_url"
+    t.integer "solar_system_object_id", null: false
+    t.index ["solar_system_object_id"], name: "index_solar_system_object_images_on_solar_system_object_id"
   end
 
   create_table "solar_system_objects", force: :cascade do |t|

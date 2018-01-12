@@ -8,6 +8,7 @@ require './models/game_image'
 require './models/pioneer'
 require './models/pioneer_image'
 require './models/solar_system_object'
+require './models/solar_system_object_image'
 require './models/team'
 require './models/best_player'
 
@@ -29,7 +30,8 @@ get /\/(\d+)/ do |id|
   elsif id == 2
 
   elsif id == 1
-    @sol_sys_obj = SolarSystemObject.includes(:pioneer).all
+    @sol_sys_obj = SolarSystemObject.includes(:pioneer, :solar_system_object_images).all
+    @pr = Pioneer.includes(:pioneer_images).all
     haml :'alex/cosmos'
   else
     redirect '/'

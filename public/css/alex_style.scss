@@ -5,8 +5,20 @@ html {
   -o-background-size: 100%;
   background-repeat: no-repeat;
 }
+
 body {
   margin-left: 250px;
   margin-right: 250px;
   background: white;
+}
+
+h1, p {
+  text-align:  center;
+}
+
+h3 {
+  padding-left: 25px;
+}
+ul {
+  padding-bottom: 25px;
 }
