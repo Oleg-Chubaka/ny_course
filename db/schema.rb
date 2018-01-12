@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107141644) do
+ActiveRecord::Schema.define(version: 20180111114828) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first_name", null: false
@@ -55,6 +55,12 @@ ActiveRecord::Schema.define(version: 20180107141644) do
     t.boolean "status", default: false, null: false
     t.string "tesera_url"
     t.index ["author_id"], name: "index_oleg_games_on_author_id"
+  end
+
+  create_table "pioneer_images", force: :cascade do |t|
+    t.string "img_url"
+    t.integer "pioneer_id", null: false
+    t.index ["pioneer_id"], name: "index_pioneer_images_on_pioneer_id"
   end
 
   create_table "pioneers", force: :cascade do |t|

@@ -6,6 +6,7 @@ require './models/author'
 require './models/category'
 require './models/game_image'
 require './models/pioneer'
+require './models/pioneer_image'
 require './models/solar_system_object'
 require './models/team'
 require './models/best_player'
@@ -23,6 +24,13 @@ get /\/(\d+)/ do |id|
   if id == 4 # Oleg B.
     @o_gs = OlegGame.includes(:author, :categories, :game_images).all
     haml :'oleg/games'
+  elsif id == 3
+
+  elsif id == 2
+
+  elsif id == 1
+    @sol_sys_obj = SolarSystemObject.includes(:pioneer).all
+    haml :'alex/cosmos'
   else
     redirect '/'
   end
