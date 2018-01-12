@@ -20,7 +20,7 @@ oleg_games[1].categories << categories[0]
 oleg_games[2].categories << categories[1] << categories[2]
 oleg_games[3].categories << categories[1] << categories[2]
 
-GameImage.create([{img_url: 'https://tesera.ru/images/items/509,3/200x200xpa/photo1.jpg', oleg_game: oleg_games[0]}, {img_url: 'https://tesera.ru/images/items/509,3/200x200xpa/photo2.jpg', oleg_game: oleg_games[0]}, {img_url: 'https://tesera.ru/images/items/472,3/200x200xpa/photo1.png', oleg_game: oleg_games[1]}, {img_url: 'https://tesera.ru/images/items/472,3/200x200xpa/photo2.jpg', oleg_game: oleg_games[1]}, {img_url: 'https://tesera.ru/images/items/472,3/200x200xpa/photo1.png', oleg_game: oleg_games[2]}, {img_url: 'https://tesera.ru/images/items/22648,3/200x200xpa/photo1.jpg', oleg_game: oleg_games[3]}])
+GameImage.create([{img_url: 'https://tesera.ru/images/items/509,3/200x200xpa/photo1.jpg', oleg_game: oleg_games[0], main: true}, {img_url: 'https://tesera.ru/images/items/509,3/200x200xpa/photo2.jpg', oleg_game: oleg_games[0]}, {img_url: 'https://tesera.ru/images/items/472,3/200x200xpa/photo1.png', oleg_game: oleg_games[1], main: true}, {img_url: 'https://tesera.ru/images/items/472,3/200x200xpa/photo2.jpg', oleg_game: oleg_games[1]}, {img_url: 'https://tesera.ru/images/items/472,3/200x200xpa/photo1.png', oleg_game: oleg_games[2], main: true}, {img_url: 'https://tesera.ru/images/items/22648,3/200x200xpa/photo1.jpg', oleg_game: oleg_games[3], main: true}])
 
 Pioneer.delete_all
 SolarSystemObject.delete_all
@@ -31,7 +31,6 @@ solar_system_objects = SolarSystemObject.create([{name: 'Меркурий', pion
 Team.delete_all
 BestPlayer.delete_all
 
-teams = Team.create([{name: 'Барселона', country: 'Испания', foundation_date: '29 ноября 1899 г.', trener: 'Эрнесто Вальверде
-', rating: '5 звёзд', notes: '24 — титула чемпиона Испании, 29 — Кубков Испании, 12 — Суперкубков Испании, 2 — Кубка испанской лиги.'}])
+teams = Team.create([{name: 'Барселона', country: 'Испания', foundation_date: '29 ноября 1899 г.', trener: 'Эрнесто Вальверде', rating: '5 звёзд', notes: '24 — титула чемпиона Испании, 29 — Кубков Испании, 12 — Суперкубков Испании, 2 — Кубка испанской лиги.'}])
 
 best_players = BestPlayer.create([{first_name: 'Лионель', last_name: 'Месси', team: teams[0]}, {first_name: 'Луис', last_name: 'Суарес', team: teams[0]}, {first_name: 'Жерар', last_name: 'Пике', team: teams[0]}, {first_name: 'Неймар да Силва', last_name: 'Сантос Жуниор', team: teams[0]}])

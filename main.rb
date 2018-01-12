@@ -22,10 +22,9 @@ get /\/(\d+)/ do |id|
   @student = Student.find_by_id(id)
   if id == 4 # Oleg B.
     @o_gs = OlegGame.includes(:author, :categories, :game_images).all
-    # @auts = Author.all
-    # @cgs = Category.all
-    # @g_is = GameImage.all
     haml :'oleg/games'
+  else
+    redirect '/'
   end
 
 end
