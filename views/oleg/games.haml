@@ -1,17 +1,99 @@
 %head
   %title Студенты
-  %link(href="/css/style.css" rel="stylesheet")
-  %link(href="/css/bootstrap.min.scss" rel="stylesheet")
+  %link(href="/css/oleg_style.css" rel="stylesheet")
   %link(rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css")
   %link(rel="icon" href="/images/logo.png" type="images/png")
   %meta(name="viewport" content="width=device-width, initial-scale=1")
 %body
-  %h3= @student.first_name + ' ' + @student.last_name
-  %ul
-    - @o_gs.each do |game|
-      %li= game.name + ' - ' + game.id.to_s + ' - ' + game.author.first_name
-      - game.categories.each do |cat|
-        %span= cat.name
-      - game.game_images.each do |imge|
-        - if imge.main
-          %img(src="#{imge.img_url}")
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .container
+      .navbar-header
+        %a.navbar-brand(href="/")
+          %i.fa.fa-reply-all(aria-hidden="true")
+          %span  Back to students list
+        %a.navbar-brand.text-right= @student.first_name + ' ' + @student.last_name
+      .navbar-collapse.collapse#navbar
+
+
+  - @o_gs.each do |game|
+    .container.game_list
+      .row
+        %a(data-toggle="modal" data-target="#modal#{game.id}")
+          %h3.game_name= game.name
+      .row.categories
+        %span= "Категории: "
+        - game.categories.each_with_index do |cat, i|
+          - com =  i+1 == game.categories.length ? '' : ', '
+          %span.categ= cat.name
+          %span= com
+      .row
+        .col-md-3
+          - url = ''
+          - game.game_images.each do |img|
+            - if img.main
+              - url = img.img_url
+          %img.main_game_image(data-toggle="modal" data-target="#modal#{game.id}" src="#{url}")
+        .col-md-9
+          %h4.text-right= "Рейтинг: #{game.rating.to_s}"
+          - text_p = game.review.gsub('<img>', '').gsub(/\s+/, ' ').split('<p>')
+          - text = text_p[0].truncate(400, separator: ' ')
+          -#- p text.length
+          -#- if text.length > 300
+          -#  - text = text[0..301]
+          -#  - sym = text[-1]
+          -#  - while sym != ' '
+          -#    - text = text[0..-arr.pop.length-1]
+          -#    - sym = [-1]
+          %p= text
+
+      %a(href="https://tesera.ru/game/#{game.tesera_url}")
+        %p.text-right Посмотреть на tesera.ru ...
+
+    -# Modal windows
+    .modal.fade(id="modal#{game.id}")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            %button.close(type="button" data-dismiss="modal")
+              %i.fa.fa-close
+            %h3.game_name.modal-title= game.name
+          .modal-body
+            .container-fluid
+              .row.categories
+                %span= "Категории: "
+                - game.categories.each_with_index do |cat, i|
+                  - com = i+1 == game.categories.length ? '' : ', '
+                  %span.categ= cat.name
+                  %span= com
+              .row
+                %span
+                  Автор:
+                  %a(href="https://tesera.ru/person#{game.author.tesera_url}")= "#{game.author.first_name} #{game.author.last_name}"
+                %br
+                %span= "Затраты: #{game.price} грн, #{game.hours} часов"
+                %br
+                %span
+                  Статус:
+                  - if game.status
+                    %span.text-success сделана
+                  - else
+                    %span.text-danger планируется
+
+                - images = []
+                - game.game_images.each do |img|
+                  - if img.main
+                    - images.unshift(img.img_url)
+                  - else
+                    - images << img.img_url
+                %img.center-block(src="#{images.shift}")
+                - text_p = game.review.gsub(/\s+/, ' ').split('<p>')
+                - text_p.each do |p|
+                  - if p.index('<img>') != nil && images.length != 0
+                    %img.center-block(src="#{images.shift}")
+                  - p.gsub('<img>', '')
+                  %p= p
+          .modal-footer
+            %a(href="https://tesera.ru/game/#{game.tesera_url}")
+              %p.text-right Посмотреть на tesera.ru ...
+  %script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+  %script(src="/bootstrap-sass-3.3.7/assets/javascripts/bootstrap.min.js")
