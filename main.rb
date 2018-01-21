@@ -30,9 +30,7 @@ get /\/(\d+)/ do |id|
   elsif id == 2
 
   elsif id == 1
-    @sol_sys_obj = SolarSystemObject.includes(:pioneer, :solar_system_object_images).all
-    @pr = Pioneer.includes(:pioneer_images).all
-    haml :'alex/cosmos'
+
   else
     redirect '/'
   end
