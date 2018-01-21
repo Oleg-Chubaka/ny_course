@@ -1,0 +1,14 @@
+%head
+  %title Студенты
+  %link(href="/css/alex_style.css" rel="stylesheet")
+  %link(href="/css/bootstrap.min.scss" rel="stylesheet")
+  %link(rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css")
+  %link(rel="icon" href="/images/logo.png" type="images/png")
+  %meta(name="viewport" content="width=device-width, initial-scale=1")
+%body
+  - @sol_sys_obj.each do |obj|
+    %h1
+      %a(href="/#{obj.id}")= obj.name
+    - obj.solar_system_object_images.each do |imge|
+      %p
+        %img(src="#{imge.img_url}" width="500")
