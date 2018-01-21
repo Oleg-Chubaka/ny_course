@@ -29,8 +29,10 @@ get /\/(\d+)/ do |id|
 
   elsif id == 2
 
-  elsif id == 1
-
+  elsif id == 1 # Alex B.
+    @sol_sys_obj = SolarSystemObject.includes(:pioneer, :solar_system_object_images).all
+    @pr = Pioneer.includes(:pioneer_images).all
+    haml :'alex/start_page'
   else
     redirect '/'
   end
