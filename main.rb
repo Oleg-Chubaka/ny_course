@@ -38,3 +38,22 @@ get /\/(\d+)/ do |id|
   end
 
 end
+
+get /\/(\d+)\/(\d+)/ do |student_id, id|
+  student_id = student_id.to_i
+  @student = Student.find_by_id(student_id)
+  if student_id == 1 # Alex B.
+    @sol_sys_obj = SolarSystemObject.includes(:pioneer, :solar_system_object_images).find_by_id(id)
+    if @sol_sys_obj.nil?
+      redirect "/#{@student.id}"
+    else
+      haml :'alex/cosmos'
+    end
+  elsif student_id == 2
+
+  elsif student_id == 3
+
+  else
+    redirect '/'
+  end
+end
