@@ -8,32 +8,24 @@
 %div
   %a(href="/")
     %h2= 'Вернуться к списку студентов'
-  %a(href="/#{@student.id}")
-    %h2= 'Вернуться к списку объектов'
 %body
-  -team = @team
-  %h1= team.first_name
-  - team.team_images.each do |imge|
-    %p
-      %img(scr="#{imge.img_url}" width="500")
-      %br
-      %i= team.name
-  %br
-  %h3= 'Команда :'
-  - team.team.team_images.each do |imge|
-    %p
-      %img(scr="#{imge.img_url}")
-      %br
-      %i= team.first_name + ' ' + team.team_last_name + ' ' + team.team
-  %h3= 'Краткие свединия  :'
-  %ul
-    %li= 'Страна :'
-    %b= team.country
-    %li= 'Дата открытия :'
-    %b= team.foudation_date
-    %li= 'Тренер :'
-    %b= team.trener
-    %li= 'Рейтинг :'
-    %b= team.rating
-    %li= 'Общее сведение :'
-    %b= team.notes
+  - @teams.each do |team|
+    %br
+    %h3= 'Команда :'
+    - team.team.team_image.each do |imge|
+      %p
+        %img(scr="#{imge.img_url}")
+        %br
+        %i= team.first_name + ' ' + team.team_last_name + ' ' + team.team
+    %h3= 'Краткие свединия  :'
+    %ul
+      %li= 'Страна :'
+      %b= team.country
+      %li= 'Дата открытия :'
+      %b= team.foudation_date
+      %li= 'Тренер :'
+      %b= team.trener
+      %li= 'Рейтинг :'
+      %b= team.rating
+      %li= 'Общее сведение :'
+      %b= team.notes
