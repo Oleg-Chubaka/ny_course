@@ -1,0 +1,62 @@
+@import "../bootstrap-sass-3.3.7/assets/stylesheets/bootstrap";
+
+body{
+  background: url('../images/games_back.jpg') 50% 50%;
+  background-attachment: fixed;
+  padding-top: 70px;
+  padding-bottom: 40px;
+  min-height: 100px;
+  font-size: 13px;
+
+  .navbar{
+    box-shadow: 0 0 15px 3px black;
+
+    .navbar-header{
+      width: 100%;
+      position: relative;
+
+      .text-right{
+        float: right;
+        font-size: 24px;
+        font-weight: bold;
+        color: #101010;
+        font-style: italic;
+      }
+    }
+  }
+
+  .game_list{
+    background: white;
+    padding: 10px 40px 20px;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px 3px black;
+
+    .game_name{
+      color: #1f6c98;
+      &:hover{
+        text-decoration: none;
+        color: #113146;
+      }
+    }
+    .main_game_image{
+      max-width: 170px;
+    }
+  }
+  .categories{
+    color: #8b8b8b;
+    font-size: 10px;
+    margin-bottom: 8px;
+
+    .categ:hover{
+      text-decoration: underline;
+    }
+  }
+  .modal{
+
+    img.center-block{
+      width: 40%;
+    }
+  }
+}
+

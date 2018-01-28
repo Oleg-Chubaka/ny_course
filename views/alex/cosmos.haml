@@ -5,30 +5,35 @@
   %link(rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css")
   %link(rel="icon" href="/images/logo.png" type="images/png")
   %meta(name="viewport" content="width=device-width, initial-scale=1")
+%div
+  %a(href="/")
+    %h2= 'Вернуться к списку студентов'
+  %a(href="/#{@student.id}")
+    %h2= 'Вернуться к списку объектов'
 %body
-  - @sol_sys_obj.each do |obj|
-    %h1= obj.name
-    - obj.solar_system_object_images.each do |imge|
-      %p
-        %img(src="#{imge.img_url}")
-        %br
-        %i= obj.name
-    %br
-    %h3= 'Первооткрыватель :'
-    - obj.pioneer.pioneer_images.each do |imge|
-      %p
-        %img(src="#{imge.img_url}")
-        %br
-        %i= obj.pioneer.first_name + ' ' + obj.pioneer.last_name
-    %h3= 'Краткие сведения :'
-    %ul
-      %li= 'Дата открытия :'
-      %b= obj.opening_date
-      %li= 'Расстояние от солнца :'
-      %b= obj.distance_from_sun
-      %li= 'Расстояние от Земли :'
-      %b= obj.distance_from_earth
-      %li= 'Вес :'
-      %b= obj.weight
-      %li= 'Общее описание :'
-      %b= obj.notes
+  - obj = @sol_sys_obj
+  %h1= obj.name
+  - obj.solar_system_object_images.each do |imge|
+    %p
+      %img(src="#{imge.img_url}" width="500")
+      %br
+      %i= obj.name
+  %br
+  %h3= 'Первооткрыватель :'
+  - obj.pioneer.pioneer_images.each do |imge|
+    %p
+      %img(src="#{imge.img_url}")
+      %br
+      %i= obj.pioneer.first_name + ' ' + obj.pioneer.last_name
+  %h3= 'Краткие сведения :'
+  %ul
+    %li= 'Дата открытия :'
+    %b= obj.opening_date
+    %li= 'Расстояние от солнца :'
+    %b= obj.distance_from_sun
+    %li= 'Расстояние от Земли :'
+    %b= obj.distance_from_earth
+    %li= 'Вес :'
+    %b= obj.weight
+    %li= 'Общее описание :'
+    %b= obj.notes
