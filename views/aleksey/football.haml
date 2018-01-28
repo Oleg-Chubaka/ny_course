@@ -1,0 +1,39 @@
+%head
+  %title Студенты
+  %link(href="/css/alex_style.css" rel="stylesheet")
+  %link(href="/css/bootstrap.min.scss" rel="stylesheet")
+  %link(rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css")
+  %link(rel="icon" href="/images/logo.png" type="images/png")
+  %meta(name="viewport" content="width=device-width, initial-scale=1")
+%div
+  %a(href="/")
+    %h2= 'Вернуться к списку студентов'
+  %a(href="/#{@student.id}")
+    %h2= 'Вернуться к списку объектов'
+%body
+  -team = @team
+  %h1= team.first_name
+  - team.team_images.each do |imge|
+    %p
+      %img(scr="#{imge.img_url}" width="500")
+      %br
+      %i= team.name
+  %br
+  %h3= 'Команда :'
+  - team.team.team_images.each do |imge|
+    %p
+      %img(scr="#{imge.img_url}")
+      %br
+      %i= team.first_name + ' ' + team.team_last_name + ' ' + team.team
+  %h3= 'Краткие свединия  :'
+  %ul
+    %li= 'Страна :'
+    %b= team.country
+    %li= 'Дата открытия :'
+    %b= team.foudation_date
+    %li= 'Тренер :'
+    %b= team.trener
+    %li= 'Рейтинг :'
+    %b= team.rating
+    %li= 'Общее сведение :'
+    %b= team.notes

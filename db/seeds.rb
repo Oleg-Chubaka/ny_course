@@ -57,7 +57,11 @@ SolarSystemObjectImage.create([{img_url: 'http://tut-cikavo.com/images/kosmos/pl
 
 Team.delete_all
 BestPlayer.delete_all
+TeamImage.delete_all
+BestPlayerImage.delete_all
 
 teams = Team.create([{name: 'Барселона', country: 'Испания', foundation_date: '29 ноября 1899 г.', trener: 'Эрнесто Вальверде', rating: '5 звёзд', notes: '24 — титула чемпиона Испании, 29 — Кубков Испании, 12 — Суперкубков Испании, 2 — Кубка испанской лиги.'}])
-
 best_players = BestPlayer.create([{first_name: 'Лионель', last_name: 'Месси', team: teams[0]}, {first_name: 'Луис', last_name: 'Суарес', team: teams[0]}, {first_name: 'Жерар', last_name: 'Пике', team: teams[0]}, {first_name: 'Неймар да Силва', last_name: 'Сантос Жуниор', team: teams[0]}])
+
+TeamImage.create([{img_url: 'http://www.football-wallpapers.com/w/clubs/barcelona/barcelona-bayern-munich-champions-league.jpg', team: teams[0]}])
+BestPlayerImage.create([{img_url: 'http://www.movenoticias.com/wp-content/uploads/2016/07/13696400-673117006170428-174280934-n-e1469633744943-744x536.jpg', best_player: best_players[0]}, {img_url: 'http://images.performgroup.com/di/library/goal_uk/a2/f0/hd-luis-suarez-liverpool_l94i7uvqn3t81n7b3mv2ptmoi.jpg?t=-1767425435&w=940', best_player: best_players[0]}, {img_url: 'https://dpchas.com.ua/sites/default/files/styles/article_list/public/u98/image_3.jpg?itok=Py1rdt_x', best_player: best_players[0]}, {img_url: 'http://playnextbet.com/wp-content/uploads/2017/08/Neymar-Junior-Paris-Saint-Germain.jpg', best_player: best_players[0]},])

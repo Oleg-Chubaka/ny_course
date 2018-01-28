@@ -5,6 +5,11 @@
   %link(rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css")
   %link(rel="icon" href="/images/logo.png" type="images/png")
   %meta(name="viewport" content="width=device-width, initial-scale=1")
+%div
+  %a(href="/")
+    %h2= 'Вернуться к списку студентов'
+  %a(href="/#{@student.id}")
+    %h2= 'Вернуться к списку объектов'
 %body
   - obj = @sol_sys_obj
   %h1= obj.name
