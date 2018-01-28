@@ -22,26 +22,20 @@ get '/' do
 end
 
 get /\/(\d+)/ do |id |
-  id = _id.to_i
-  @student = Student.find_by_id(student_id)
+  id = id.to_i
+  @student = Student.find_by_id(id)
   if id == 4 # Oleg B.
     @o_gs = OlegGame.includes(:author, :categories, :game_images).all
     haml :'oleg/games'
   elsif id == 3
+
+  elsif id == 2
     @a_f = AlekseyFootball.includes(:team, :best_player_images).all
     haml :'aleksey/football'
-  elsif id == 2
-
-<<<<<<< HEAD
-  elsif id == 1
-
-
-=======
   elsif id == 1 # Alex B.
     @sol_sys_obj = SolarSystemObject.includes(:pioneer, :solar_system_object_images).all
     @pr = Pioneer.includes(:pioneer_images).all
     haml :'alex/start_page'
->>>>>>> 85b3538a2730ad6f7af51ee3008e22a5cea999d6
   else
     redirect '/'
   end
