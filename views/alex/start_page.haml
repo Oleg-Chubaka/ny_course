@@ -8,7 +8,7 @@
 %body
   - @sol_sys_obj.each do |obj|
     %h1
-      %a(href="/#{obj.id}")= obj.name
+      %a(href="/#{@student.id}/#{obj.id}")= obj.name
     - obj.solar_system_object_images.each do |imge|
       %p
         %img(src="#{imge.img_url}" width="500")
