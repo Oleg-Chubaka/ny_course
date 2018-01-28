@@ -30,7 +30,7 @@ get /\/(\d+)/ do |id |
   elsif id == 3
 
   elsif id == 2
-    @a_f = AlekseyFootball.includes(:team, :best_player_images).all
+    @teams = Team.includes(:team_image, :best_players).all
     haml :'aleksey/football'
   elsif id == 1 # Alex B.
     @sol_sys_obj = SolarSystemObject.includes(:pioneer, :solar_system_object_images).all
