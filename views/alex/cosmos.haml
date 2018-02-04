@@ -1,19 +1,15 @@
 %head
   %title Студенты
   %link(href="/css/alex_style.css" rel="stylesheet")
-  %link(href="/css/bootstrap.min.scss" rel="stylesheet")
   %link(rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css")
-  %link(rel="icon" href="/images/logo.png" type="images/png")
   %meta(name="viewport" content="width=device-width, initial-scale=1")
-%div
-  %ul(class="breadcrumb")
-    %li(style="display: inline;")
-      %a(href="/")
-        %h2= 'Вернуться к списку студентов'
-    %li(style="display: inline;")
-      %a(href="/#{@student.id}")
-        %h2= 'Вернуться к списку объектов'
 %body
+  %div.header
+    %ul(class="breadcrumb")
+      %li
+        %a(href="/")= 'Вернуться к списку студентов'
+      %li
+        %a(href="/#{@student.id}")= 'Вернуться к списку объектов'
   - obj = @sol_sys_obj
   %h1= obj.name
   - obj.solar_system_object_images.each do |imge|

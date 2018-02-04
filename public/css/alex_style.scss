@@ -1,13 +1,14 @@
+@import "../bootstrap-sass-3.3.7/assets/stylesheets/bootstrap";
+
 html {
   background-image: url(https://i.ytimg.com/vi/fMGfIh7Uyks/maxresdefault.jpg);
 }
 
-div {
+div.header {
   margin: 0px;
   padding: 0px;
   width: 100%;
-  height: 100px;
-  background: #E2D3B4;
+  height: 25px;
   position: fixed;
   top: 0px;
   left: 0px;
