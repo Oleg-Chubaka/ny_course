@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180112123651) do
+ActiveRecord::Schema.define(version: 20180121094002) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "tesera_url"
+  end
+
+  create_table "best_player_images", force: :cascade do |t|
+    t.string "img_url"
+    t.integer "best_player_id", null: false
+    t.index ["best_player_id"], name: "index_best_player_images_on_best_player_id"
   end
 
   create_table "best_players", force: :cascade do |t|
@@ -85,12 +91,24 @@ ActiveRecord::Schema.define(version: 20180112123651) do
     t.index ["pioneer_id"], name: "index_solar_system_objects_on_pioneer_id"
   end
 
+  create_table "solar_system_objects_images", force: :cascade do |t|
+    t.string "img_url"
+    t.integer "solar_system_object_id", null: false
+    t.index ["solar_system_object_id"], name: "index_solar_system_objects_images_on_solar_system_object_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "project_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "team_images", force: :cascade do |t|
+    t.string "img_url"
+    t.integer "team_id", null: false
+    t.index ["team_id"], name: "index_team_images_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|

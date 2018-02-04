@@ -11,6 +11,8 @@ require './models/solar_system_object'
 require './models/solar_system_object_image'
 require './models/team'
 require './models/best_player'
+require './models/team_image'
+require './models/best_player_image'
 
 set :database, "sqlite3:ny.sqlite3"
 
@@ -19,7 +21,7 @@ get '/' do
   haml :'students/index'
 end
 
-get /\/(\d+)/ do |id|
+get /\/(\d+)/ do |id |
   id = id.to_i
   @student = Student.find_by_id(id)
   if id == 4 # Oleg B.
@@ -28,7 +30,8 @@ get /\/(\d+)/ do |id|
   elsif id == 3
 
   elsif id == 2
-
+    @teams = Team.includes(:team_image, :best_players).all
+    haml :'aleksey/football'
   elsif id == 1 # Alex B.
     @sol_sys_obj = SolarSystemObject.includes(:pioneer, :solar_system_object_images).all
     @pr = Pioneer.includes(:pioneer_images).all
