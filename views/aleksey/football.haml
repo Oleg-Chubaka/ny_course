@@ -2,17 +2,23 @@
   %title Студенты
   %link(href="/css/aleksey_style.css" rel="stylesheet")
   %link(rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css")
-  %link(rel="icon" href="/images/logo.png" type="images/png")
   %meta(name="viewport" content="width=device-width, initial-scale=1")
-%div
-  %a(href="/")
-    %h2= 'Back to the list of students'
 %body
+  %div.header
+    %a(href="/")
+      %h5= 'Back to the list of students'
   - @teams.each do |team|
+    %img(src="#{team.team_image.img_url}" width=500)
     %br
+<<<<<<< HEAD
     %h3= "Команда \"#{team.name}\""
     %p
       %img(scr="#{team.team_image.img_url}")
+=======
+    %h3
+      = "Команда \"#{team.name}\""
+
+>>>>>>> 6fb76dbf95af93ffb38d871028909cb5239df387
     %br
     - team.best_players.each do |player|
       %p

@@ -1,6 +1,7 @@
 How to use scss you can read here https://coderwall.com/p/yjeajq/autoloading-sass-in-sinatra
 
-sass --watch style.scss:style.css
+sass --watch alex_style.scss:alex_style.css
+sass --watch aleksey_style.scss:aleksey_style.css
 sass --watch oleg_style.scss:oleg_style.css
 
 How to create migration

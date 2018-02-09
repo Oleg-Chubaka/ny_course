@@ -4,12 +4,17 @@ html {
   background-image: url(http://sport.ua/images/teams/logo_118.png);
 }
 
-div {
+div.header {
   margin: 0px;
   padding: 0px;
   width: 100%;
+<<<<<<< HEAD
   height: 100px;
   background: #1E90FF;
+=======
+  height: 35px;
+  background: #E2D3B4;
+>>>>>>> 6fb76dbf95af93ffb38d871028909cb5239df387
   position: fixed;
   top: 0px;
   left: 0px;
@@ -17,7 +22,7 @@ div {
 }
 
 body {
-  margin-top: 125px;
+  margin-top: 25px;
   margin-left: 250px;
   margin-right: 250px;
   background: orangered;
