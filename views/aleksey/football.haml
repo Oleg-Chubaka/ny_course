@@ -11,8 +11,8 @@
   - @teams.each do |team|
     %br
     %h3= "Команда \"#{team.name}\""
-      %p
-        %img(scr="#{team.team_image.img_url}")
+    %p
+      %img(scr="#{team.team_image.img_url}")
     %br
     - team.best_players.each do |player|
       %p
