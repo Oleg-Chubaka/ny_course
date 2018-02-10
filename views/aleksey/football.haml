@@ -27,7 +27,6 @@
       %b= team.notes
     %h3= "Лутшие игроки Клуба \"#{team.name}\""
     - team.best_players.each do |player|
-      - unless player.best_player_image.nil?
-        %img(src="#{player.best_player_image.img_url}")
+      %img(src="#{player.best_player_image.img_url}")
       %p
         %i= player.first_name + ' ' + player.last_name
