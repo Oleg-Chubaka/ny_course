@@ -6,14 +6,9 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-<<<<<<< HEAD
-    background-image: url(http://sport.ua/images/teams/logo_118.png);
-}
-=======
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
->>>>>>> 6fb76dbf95af93ffb38d871028909cb5239df387
 
 body {
   margin: 0; }
@@ -5000,20 +4995,6 @@ button.list-group-item-danger {
     bottom: 0;
     height: 100%;
     width: 100%;
-<<<<<<< HEAD
-    height: 100px;
-    background: #00BFFF;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 9999; }
-
-body {
-    margin-top: 125px;
-    margin-left: 250px;
-    margin-right: 250px;
-    background: orangered; }
-=======
     border: 0; }
 
 .embed-responsive-16by9 {
@@ -5819,35 +5800,19 @@ button.close {
 html {
   background-image: url(http://sport.ua/images/teams/logo_118.png); }
 
-div.header {
+div {
   margin: 0px;
   padding: 0px;
   width: 100%;
-  height: 35px;
-  background: #E2D3B4;
   position: fixed;
   top: 0px;
   left: 0px;
   z-index: 9999; }
 
 body {
-  margin-top: 25px;
+  margin-top: 50px;
   margin-left: 250px;
   margin-right: 250px;
   background: white; }
->>>>>>> 6fb76dbf95af93ffb38d871028909cb5239df387
 
-h1, p {
-  text-align: center; }
-
-h3, h2 {
-  padding-left: 25px; }
-
-ul, p {
-  padding-bottom: 25px; }
-
-<<<<<<< HEAD
 /*# sourceMappingURL=aleksey_style.css.map */
-=======
-/*# sourceMappingURL=aleksey_style.css.map */
->>>>>>> 6fb76dbf95af93ffb38d871028909cb5239df387
