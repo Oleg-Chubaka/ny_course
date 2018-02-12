@@ -5,19 +5,18 @@ html {
 }
 
 div {
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
+  width: 60%;
   position: fixed;
-  top: 0px;
-  left: 0px;
   z-index: 9999;
 }
 
 body {
-  margin-top: 50px;
-  margin-left: 250px;
-  margin-right: 250px;
-  background: white;
+  margin-top: 60px;
+  margin-left: 260px;
+  margin-right: 260px;
+  background: black;
 }
 
+h3, p {
+  text-align:  center;
+}
