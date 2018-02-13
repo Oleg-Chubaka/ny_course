@@ -2,27 +2,22 @@
   %title Студенты
   %link(href="/css/aleksey_style.css" rel="stylesheet")
   %link(rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css")
-  %link(rel="icon" href="/images/logo.png" type="images/png")
   %meta(name="viewport" content="width=device-width, initial-scale=1")
-%div
-  %a(href="/")
-    %h2= 'Back to the list of students'
 %body
-  - @teams.each do |team|
-    %br
+  %div
+    %ul(class="breadcrumb")
+      %li
+        %a(href="/")= 'Вернуться к списку студентов'
+      %li
+        %a(href="/#{@student.id}")= 'Вернуться к списку команды'
+  - @team.each do |team|
     %h3= "Команда \"#{team.name}\""
-      %p
-        %img(scr="#{team.team_image.img_url}")
-    %br
-    - team.best_players.each do |player|
-      %p
-        %i= player.first_name + ' ' + player.last_name
-    %br
+    %img(src="#{team.team_image.img_url}")
     %h3= 'Краткие свединия: '
     %ul
       %li= 'Страна: '
       %b= team.country
-      %li= 'Дата открытия: '
+      %li= 'Дата основания: '
       %b= team.foundation_date
       %li= 'Тренер: '
       %b= team.trener
@@ -30,3 +25,8 @@
       %b= team.rating
       %li= 'Общее сведение: '
       %b= team.notes
+    %h3= "Лутшие игроки Клуба \"#{team.name}\""
+    - team.best_players.each do |player|
+      %img(src="#{player.best_player_image.img_url}")
+      %p
+        %i= player.first_name + ' ' + player.last_name

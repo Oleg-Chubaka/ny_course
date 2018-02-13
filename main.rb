@@ -34,7 +34,7 @@ get /\/(\d+)/ do |id|
     @i_team = IlyaTeam.includes(:divisions, :partners).all
     haml :'ilya/cybersport_teams'
   elsif id == 2
-    @teams = Team.includes(:team_image, :best_players).all
+    @team = Team.includes(:team_image, best_players: :best_player_image).all
     haml :'aleksey/football'
   elsif id == 1 # Alex B.
     @sol_sys_obj = SolarSystemObject.includes(:pioneer, :solar_system_object_images).all
