@@ -13,6 +13,9 @@ require './models/team'
 require './models/best_player'
 require './models/team_image'
 require './models/best_player_image'
+require './models/ilya_team'
+require './models/division'
+require './models/partner'
 
 set :database, "sqlite3:ny.sqlite3"
 
@@ -21,14 +24,15 @@ get '/' do
   haml :'students/index'
 end
 
-get /\/(\d+)/ do |id |
+get /\/(\d+)/ do |id|
   id = id.to_i
   @student = Student.find_by_id(id)
   if id == 4 # Oleg B.
     @o_gs = OlegGame.includes(:author, :categories, :game_images).all
     haml :'oleg/games'
-  elsif id == 3
-
+  elsif id == 3 # Ilya
+    @i_team = IlyaTeam.includes(:divisions, :partners).all
+    haml :'ilya/cybersport_teams'
   elsif id == 2
     @teams = Team.includes(:team_image, :best_players).all
     haml :'aleksey/football'

@@ -1,0 +1,54 @@
+@import "../bootstrap-sass-3.3.7/assets/stylesheets/bootstrap";
+
+body{
+  background: url('../images/cyber_back.jpg');
+  background-attachment: fixed;
+  font-size: 15px;
+}
+
+a.navbar-brand > i,span {
+  color: orange;
+}
+
+li.dropdown, .navbar-header {
+  padding-right: 120px;
+}
+
+li.dropdown > a.dropdown-toggle{
+  color: orange;
+}
+
+ul.dropdown-menu > li > a:hover {
+  background: orange;
+}
+
+li.dropdown > a.dt2 {
+  color: blue;
+}
+
+ul.dm2 > li > a:hover {
+  background: blue;
+  color: white;
+}
+
+.carousel {
+  max-height: 800px;
+  margin-top: 110px;
+  .glyphicon {
+    font-size: 100px;
+  }
+  img {
+    max-height: 800px;
+    margin: 0 auto;
+  }
+}
+
+.text {
+  margin-top: 20px;
+  color: white;
+  font-size: 20px;
+  background: #222222;
+  height: auto;
+  width: 1420px;
+  opacity: 0.8;
+}

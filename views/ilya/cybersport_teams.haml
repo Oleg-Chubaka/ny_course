@@ -1,0 +1,82 @@
+%head
+  %title Студенты
+  %link(href="/css/ilya_style.css" rel="stylesheet")
+  %link(rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css")
+  %link(rel="icon" href="/images/logo.png" type="images/png")
+  %meta(name="viewport" content="width=device-width, initial-scale=1")
+%body
+  .navbar.navbar-inverse.navbar-fixed-top
+    .container
+      .navbar-header
+        %a.navbar-brand(href="/")
+          %i.fa.fa-reply-all(aria-hidden="true")
+          %span Вернуться к списку студентов
+      .collapse.navbar-collapse(id="responsive-menu")
+        %ul.nav.navbar-nav
+          %li.dropdown
+            %a.dropdown-toggle(href="#NaVi" data-toggle="dropdown")
+              Natus Vincere
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                %a(href="#about_NaVi") О команде
+              %li
+                %a(href="#divisions") Подразделения
+              %li
+                %a(href="#sponsors") Спонсоры
+          %li.dropdown
+            %a.dropdown-toggle.dt2(href="#Virtus" data-toggle="dropdown")
+              Virtus.pro
+              %b.caret
+            %ul.dropdown-menu.dm2
+              %li
+                %a(href="#about_Virtus") О команде
+              %li
+                %a(href="#divisions") Подразделения
+              %li
+                %a(href="#sponsors") Спонсоры
+          %li.dropdown
+            %a.dropdown-toggle.dt2(href="#Fnatic" data-toggle="dropdown")
+              Fnatic
+              %b.caret
+            %ul.dropdown-menu.dm2
+              %li
+                %a(href="#about_Fnatic") О команде
+              %li
+                %a(href="#divisions") Подразделения
+              %li
+                %a(href="#sponsors") Спонсоры
+  .carousel.slide(id="carousel")
+    %ol.carousel-indicators
+      %li.active(data-target="#carousel" data-slide-to="0")
+      %li(data-target="#carousel" data-slide-to="1")
+      %li(data-target="#carousel" data-slide-to="2")
+    .carousel-inner
+      .item.active
+        %img(src="#{@i_team[0].img_url}")
+        .carousel-caption
+          %h3 Natus Vincere
+      .item
+        %img(src="#{@i_team[1].img_url}")
+        .carousel-caption
+          %h3 Virtus.pro
+      .item
+        %img(src="#{@i_team[2].img_url}")
+        .carousel-caption
+          %h3 Fnatic
+    %a.left.carousel-control(href="#carousel" data-slide="prev")
+      %span.fa.fa-angle-left.glyphicon.glyphicon-chevron-right
+    %a.right.carousel-control(href="#carousel" data-slide="next")
+      %span.fa.fa-angle-right.glyphicon.glyphicon-chevron-right
+  .container.text
+    %h1 Киберспорт
+    %p Киберспорт, также именуемый как компьютерный спорт или электронный спорт — вид соревновательной деятельности и специальной практики подготовки к соревнованиям на основе видеоигр, где игра предоставляет среду взаимодействия объектов управления, обеспечивая равные условия состязаний человека с человеком или команды с командой. Как вид спорта признан в России.
+    %p Все киберспортивные дисциплины делятся на несколько основных классов, различаемых свойствами пространств, моделей, игровой задачей и развиваемыми игровыми навыками киберспортсменов: шутеры от первого лица, стратегии реального времени, авто- и авиа-симуляторы, командные ролевые игры с элементами тактико-стратегической игры и т. д.
+    %p Разыгрываемые призовые фонды могут достигать нескольких миллионов долларов США. Турнир по Dota 2 «The International» несколько раз бил рекорды по выплатам: так в 2016 году было разыграно 20,77 млн долларов, в 2017 — 24,79.
+    %p Игры турниров транслируются в прямом эфире в интернете, собирая многомиллионную аудиторию. Например, за финалом The International 2015, согласно данным с TrackDota.com, наблюдало более 4,6 млн зрителей. В 2017 году аудитория эспортов достигнет в общей сложности примерно 385 миллионов человек во всем мире.
+    %p История киберспорта началась с игры Doom 2, которая имела режим сетевой игры через локальную вычислительную сеть. Благодаря популярности игры Quake, в 1997 году в США появилась первая лига киберспортсменов — Cyberathlete Professional League.
+    %p Здесь можно узнать о 3 моих любимых командах
+
+
+  %script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+  %script(src="/bootstrap-sass-3.3.7/assets/javascripts/bootstrap.min.js")

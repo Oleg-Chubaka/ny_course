@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180121094002) do
+ActiveRecord::Schema.define(version: 20180202133603) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first_name", null: false
@@ -42,11 +42,31 @@ ActiveRecord::Schema.define(version: 20180121094002) do
     t.index ["oleg_game_id"], name: "index_categories_oleg_games_on_oleg_game_id"
   end
 
+  create_table "divisions", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "info"
+    t.string "link_to_source"
+    t.string "img_url"
+    t.integer "ilya_team_id", null: false
+    t.index ["ilya_team_id"], name: "index_divisions_on_ilya_team_id"
+  end
+
   create_table "game_images", force: :cascade do |t|
     t.string "img_url"
     t.integer "oleg_game_id", null: false
     t.boolean "main", default: false, null: false
     t.index ["oleg_game_id"], name: "index_game_images_on_oleg_game_id"
+  end
+
+  create_table "ilya_teams", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "country", null: false
+    t.integer "year_of_foundation", null: false
+    t.string "short_info"
+    t.string "full_info"
+    t.string "link_to_source"
+    t.string "img_url"
+    t.string "manager", null: false
   end
 
   create_table "oleg_games", force: :cascade do |t|
@@ -61,6 +81,13 @@ ActiveRecord::Schema.define(version: 20180121094002) do
     t.boolean "status", default: false, null: false
     t.string "tesera_url"
     t.index ["author_id"], name: "index_oleg_games_on_author_id"
+  end
+
+  create_table "partners", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "link_to_source"
+    t.integer "ilya_team_id", null: false
+    t.index ["ilya_team_id"], name: "index_partners_on_ilya_team_id"
   end
 
   create_table "pioneer_images", force: :cascade do |t|
